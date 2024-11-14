@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Brush Script MT', cursive;
+}
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('images/bg1.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.button-24 {
+	background: #FF4742;
+	border: 1px solid #FF4742;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 16px;
+	min-height: 40px;
+	outline: 0;
+	padding: 12px 14px;
+	text-align: center;
+	text-rendering: geometricprecision;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+  }
+  
+  .button-24:hover,
+  .button-24:active {
+	background-color: initial;
+	background-position: 0 0;
+	color: #FF4742;
+  }
+  
+  .button-24:active {
+	opacity: .5;
+  }
+  
+.bird {
+	height: 100px;
+	width: 130px;
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+}
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 70vh;
+	width: 6vw;
+	background:radial-gradient(lightgreen 50%, green);
+	border: 5px solid black;
+}
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 20px;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 80%;
+}
+.messageStyle{
+	background: white;
+	padding: 30px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 5%;
+}
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 10vh;
+	font-size: 5vh;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	font-family: 'Brush Script MT', cursive;
+}
+.score_val {
+	color: rgb(30, 255, 0);
+	font-weight: bold;
+}
+@media only screen and (max-width: 1080px) {
+    
+	
+	.bird{
+		width: 120px;
+		height: 90px;
+	}
+	.pipe_sprite{
+		width: 14vw;
+	}
+}
