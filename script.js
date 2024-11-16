@@ -36,6 +36,23 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+const replyBtn = document.getElementById("replay");
+    replyBtn.addEventListener("click", () => {
+        if( game_state != 'Play'){
+            document.querySelectorAll('.pipe_sprite').forEach((e) => {
+                e.remove();
+            });
+            img.style.display = 'block';
+            bird.style.top = '40vh';
+            game_state = 'Play';
+            message.innerHTML = '';
+            score_title.innerHTML = 'Score : ';
+            score_val.innerHTML = '0';
+            message.classList.remove('messageStyle');
+            play();
+        }
+    });
+
 function play(){
     function move(){
         if(game_state != 'Play') return;
