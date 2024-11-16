@@ -91,14 +91,14 @@ function play(){
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
         document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
+            if(e.key == 'ArrowUp' || e.key == '40'){
                 img.src = 'images/ji.png';
                 bird_dy = -7.6;
             }
         });
 
         document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
+            if(e.key == 'ArrowUp' || e.key == '38'){
                 img.src = 'images/ji1.png';
             }
         });
