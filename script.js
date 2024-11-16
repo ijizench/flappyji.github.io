@@ -21,7 +21,7 @@ message.classList.add('messageStyle');
 
 document.addEventListener('keydown', (e) => {
     
-    if(e.key == 'click' && game_state != 'Play'){
+    if( game_state != 'Play'){
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
