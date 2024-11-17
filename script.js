@@ -85,55 +85,21 @@ function play(){
     requestAnimationFrame(move);
 
     let bird_dy = 0;
-
-    window.addEventListener('load', function(){
-        var box1 = document.getElementById('background')
-        var startx = 0
-        var dist = 0
-
-        if(game_state != 'Play') return;
-        bird_dy = bird_dy + grativy;
-        box1.addEventListener('touchstart', function(e){
-            var touchobj = e.changedTouches[0]
-            startx = parseInt(touchobj.clientX)
-            img.src = 'images/ji.png';
-                bird_dy = -7.6;
-        });
-     
-        
-        box1.addEventListener('touchend', function(e){
-            var touchobj = e.changedTouches[0] // reference first touch point for this event
-            img.src = 'images/ji1.png';
-            e.preventDefault()
-        });
-     
-        if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
-            game_state = 'End';
-            message.style.left = '28vw';
-            window.location.reload();
-            message.classList.remove('messageStyle');
-            return;
-        }
-        bird.style.top = bird_props.top + bird_dy + 'px';
-        bird_props = bird.getBoundingClientRect();
-        requestAnimationFrame(apply_gravity);
-    })
-    
     function apply_gravity(){
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
-        document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
+        document.addEventListener('keydown', moveUp);
+        function moveUp() {
                 img.src = 'images/ji.png';
                 bird_dy = -7.6;
-            }
-        });
+        };
+       
 
-        document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
+        document.addEventListener('keyup', moveUp);
+        function moveUp() {
                 img.src = 'images/ji1.png';
-            }
-        });
+            };
+
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
             game_state = 'End';
