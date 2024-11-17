@@ -88,17 +88,13 @@ function play(){
     function apply_gravity(){
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
-        document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
-                img.src = 'images/ji.png';
+        document.addEventListener('keydown', function() {
+             img.src = 'images/ji.png';
                 bird_dy = -7.6;
-            }
         });
 
-        document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp' || e.key == '13'){
+        document.addEventListener('keypress', function(){
                 img.src = 'images/ji1.png';
-            }
         });
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
@@ -144,3 +140,4 @@ function play(){
     }
     requestAnimationFrame(create_pipe);
 }
+
