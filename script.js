@@ -95,10 +95,7 @@ function play(){
         };
        
 
-        document.addEventListener('keyup', moveUp);
-        function moveUp() {
-                img.src = 'images/ji1.png';
-            };
+       
 
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
