@@ -84,7 +84,7 @@ function play(){
     }
     requestAnimationFrame(move);
 
-    let bird_dy = 0;
+    let bird_dy = 100;
     function apply_gravity(){
     const click = document.getElementById("background");
     click.addEventListener("click", () => {
@@ -93,7 +93,7 @@ function play(){
         document.addEventListener('keydown', moveUp);
         function moveUp() {
                 img.src = 'images/ji.png';
-                bird_dy = -7.6;
+                bird_dy -= 25;
         };
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
