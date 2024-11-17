@@ -95,13 +95,6 @@ function play(){
                 img.src = 'images/ji.png';
                 bird_dy = -7.6;
         };
-       
-
-        document.addEventListener('keyup', moveUp);
-        function moveUp() {
-                img.src = 'images/ji1.png';
-            };
-
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
             game_state = 'End';
@@ -150,3 +143,4 @@ function play(){
     }
     requestAnimationFrame(create_pipe);
 }
+
