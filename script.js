@@ -84,14 +84,14 @@ function play(){
     }
     requestAnimationFrame(move);
 
-    let bird_dy = 0;
+    let bird_dy = 150;
     function apply_gravity(){
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
         document.addEventListener('keydown', moveUp);
         function moveUp() {
                 img.src = 'images/ji.png';
-                bird_dy = -7.6;
+                bird_dy -= 25;
         };
        
 
