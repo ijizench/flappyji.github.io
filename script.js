@@ -84,17 +84,22 @@ function play(){
     }
     requestAnimationFrame(move);
 
-    let bird_dy = 100;
+    let bird_dy = 0;
     function apply_gravity(){
-    const click = document.getElementById("background");
-    click.addEventListener("click", () => {
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
-        document.addEventListener('keydown', moveUp);
-        function moveUp() {
+        document.addEventListener('keydown', (e) => {
+            if(e.key == 'ArrowUp' || e.key == '13'){
                 img.src = 'images/ji.png';
-                bird_dy -= 25;
-        };
+                bird_dy = -7.6;
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if(e.key == 'ArrowUp' || e.key == '13'){
+                img.src = 'images/ji1.png';
+            }
+        });
 
         if(bird_props.top <= 0 || bird_props.bottom >= background.bottom){
             game_state = 'End';
@@ -106,11 +111,7 @@ function play(){
         bird.style.top = bird_props.top + bird_dy + 'px';
         bird_props = bird.getBoundingClientRect();
         requestAnimationFrame(apply_gravity);
-        });
     }
-
-
-    
     requestAnimationFrame(apply_gravity);
 
     let pipe_seperation = 0;
@@ -143,4 +144,3 @@ function play(){
     }
     requestAnimationFrame(create_pipe);
 }
-
